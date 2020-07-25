@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        Izin Tidak Hadir
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        {{tgl}}
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="loginForm(f)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <p style="text-align: center;font-size: 14px;">Isi keterangan untuk melakukan  izin tidak hadir pada pelajaran <b>{{matkul}}</b></p>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-textarea   name="alasan" ngModel #alasan="ngModel" style="font-size:12px;" type="text" placeholder="Berikan alasan anda!"  required></ion-textarea>
+            </ion-item>
+          </div>
+          <ion-row>
+            <ion-col>
+              <div style="margin-top:20px;">
+              <ion-button  size="medium" type="button" color="warning" (click)="kembali()"  expand="block">KEMBALI</ion-button>
+            </div>
+            </ion-col>
+            <ion-col>
+              <div style="margin-top:20px;">
+              <ion-button  size="medium" type="submit"  expand="block">Kirim Izin</ion-button>
+            </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

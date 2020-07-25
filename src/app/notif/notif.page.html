@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Notifikasi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher #refresherRef slot="fixed" (ionRefresh)="refreshAppointments($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-item *ngFor="let it of data">
+    <ion-label>
+      <p>{{it.pesan}}</p>
+    </ion-label>
+  </ion-item> 
+</ion-content>

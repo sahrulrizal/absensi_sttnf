@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="loginForm(f)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <p style="text-align: center;font-size: 18px;">Login STTNF </p>
+          </div>
+          <div padding>
+              <ion-item>
+                <ion-label position="floating">NIK</ion-label>
+                <ion-input name="nik" #nik='ngModel' ngModel type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input name="password" #password='ngModel' ngModel type="password"></ion-input>
+              </ion-item>
+          </div>
+          <ion-button  size="medium" type="submit"  expand="block">Login</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

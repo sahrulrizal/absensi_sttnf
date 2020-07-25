@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Jadwal Hari ini
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink='/notif'>
+        Notif
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher #refresherRef slot="fixed" (ionRefresh)="refreshAppointments($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  
+    <ion-item>
+      <ion-label>
+        <div class="profile">
+          <div class="nama">Hallo, {{nama}}</div>
+          <div class="nik">NIK : {{nik}}</div>
+        </div>
+      </ion-label>
+      <ion-button end color="warning" (click)="logout()">logout</ion-button>
+    </ion-item>
+    <hr>
+  
+  <ion-item *ngFor="let it of data">
+    <ion-label>
+      <h2>{{it.matkul}}</h2>
+      <h3>{{it.dosen}}</h3>
+      <p>{{it.tanggal}}</p>
+    </ion-label>
+    <ion-button end color="dark">{{it.status}}</ion-button>
+    <ion-button *ngIf="it.status != 'izin'" end color="success" (click)="izin(it.id,it.matkul,it.tanggal)">Ajukan izin</ion-button>
+    </ion-item> 
+</ion-content>
